@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAMSHA | Where Bridal Beauty Becomes Timeless Art</title>
+  <meta name="description" content="Couture bridal makeup by Ramsha. One artist, one vision—personalized luxury for your once-in-a-lifetime moment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            champagne: '#f7e7ce',
+            ivory: '#fffff5',
+            'soft-gold': '#c9a962',
+            'gold-dark': '#a68b4a',
+            'dusty-rose': '#c4a5a5',
+            charcoal: '#2c2c2c',
+            'warm-black': '#1a1816',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-warm-black text-ivory font-sans antialiased overflow-x-hidden">
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__logo">
+      <span class="letter">R</span>
+      <span class="letter">A</span>
+      <span class="letter">M</span>
+      <span class="letter">S</span>
+      <span class="letter">H</span>
+      <span class="letter">A</span>
+    </div>
+  </div>
+
+  <canvas class="three-bg" id="threeCanvas" aria-hidden="true"></canvas>
+  <div class="particles-layer" id="particlesLayer" aria-hidden="true"></div>
+
+  <main id="mainContent">
+    <!-- HERO (upgraded) -->
+    <section class="hero relative min-h-screen flex items-center justify-center" id="hero">
+      <div class="hero-video-wrap">
+        <video autoplay muted loop playsinline class="hero-video" id="heroVideo" poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80">
+          <source src="videos/local-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="hero-gradient-overlay"></div>
+      <div class="hero-gold-overlay"></div>
+      <div class="relative z-10 px-4 sm:px-6 text-center max-w-4xl mx-auto hero-content">
+        <div class="hero-brand">
+          <div class="hero-sequence brand-monogram-wrap" aria-hidden="true"><div class="brand-monogram" aria-hidden="true"><span>R</span></div></div>
+          <p class="hero-sequence brand-logo font-serif text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] tracking-[0.3em] sm:tracking-[0.35em] uppercase text-center mt-5">Ramsha</p>
+          <div class="hero-sequence brand-line" aria-hidden="true"></div>
+          <p class="hero-sequence brand-tagline font-serif text-lg sm:text-xl md:text-2xl text-center mt-4 font-extralight bg-gradient-to-r from-soft-gold via-[#f5e7a1] to-soft-gold bg-clip-text text-transparent">Where Bridal Beauty Becomes Timeless Art</p>
+        </div>
+        <p class="hero-sequence hero-subheading font-sans text-champagne/90 text-sm sm:text-base md:text-lg mt-12 max-w-xl mx-auto tracking-wide leading-relaxed">
+          Luxury Bridal Makeup for Your Once-in-a-Lifetime Moment
+        </p>
+        <div class="hero-sequence hero-ctas flex flex-wrap items-center justify-center gap-4 sm:gap-5 mt-10">
+          <a href="#booking" class="btn-magnetic-wrap">
+            <span class="btn-magnetic btn-primary">Book Consultation</span>
+          </a>
+          <a href="#portfolio" class="btn-magnetic-wrap">
+            <span class="btn-magnetic btn-outline">View Bridal Portfolio</span>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-ribbon" aria-hidden="true"></div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider silk-divider--dark w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 Q360,40 720,40 T1440,0 L1440,80 L0,80 Z" /></svg>
+    </div>
+
+    <!-- SIGNATURE SERVICES -->
+    <section class="section-luxury py-24 md:py-32 relative" id="services" data-lazy>
+      <div class="absolute inset-0 bg-warm-black/95"></div>
+      <div class="absolute inset-0 radial-glow radial-glow--center opacity-30"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">What I Offer</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-ivory shimmer-wrap">Signature Services</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
+          <article class="service-card scroll-reveal group">
+            <div class="service-card__bg" style="background-image:url(https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80)"></div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="font-serif text-xl md:text-2xl text-ivory mb-2">Bridal Makeup</h3>
+              <p class="text-champagne/80 text-sm leading-relaxed mb-4">Full bridal glam for your wedding day. Timeless, camera-ready, unforgettable.</p>
+              <p class="text-soft-gold font-serif text-lg">From $450</p>
+              <a href="#booking" class="service-card__cta">View Details</a>
+            </div>
+          </article>
+          <article class="service-card scroll-reveal group">
+            <div class="service-card__bg" style="background-image:url(https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80)"></div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="font-serif text-xl md:text-2xl text-ivory mb-2">Engagement Makeup</h3>
+              <p class="text-champagne/80 text-sm leading-relaxed mb-4">Perfect for your engagement shoot. Soft, romantic, picture-perfect.</p>
+              <p class="text-soft-gold font-serif text-lg">From $280</p>
+              <a href="#booking" class="service-card__cta">View Details</a>
+            </div>
+          </article>
+          <article class="service-card scroll-reveal group">
+            <div class="service-card__bg" style="background-image:url(https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80)"></div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="font-serif text-xl md:text-2xl text-ivory mb-2">Reception Glam</h3>
+              <p class="text-champagne/80 text-sm leading-relaxed mb-4">Evening transformation for your reception. Glamorous and lasting.</p>
+              <p class="text-soft-gold font-serif text-lg">From $320</p>
+              <a href="#booking" class="service-card__cta">View Details</a>
+            </div>
+          </article>
+          <article class="service-card scroll-reveal group">
+            <div class="service-card__bg" style="background-image:url(https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80)"></div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="font-serif text-xl md:text-2xl text-ivory mb-2">HD / Airbrush</h3>
+              <p class="text-champagne/80 text-sm leading-relaxed mb-4">Flawless, long-wear finish for film and photography. No shine, all glow.</p>
+              <p class="text-soft-gold font-serif text-lg">From $380</p>
+              <a href="#booking" class="service-card__cta">View Details</a>
+            </div>
+          </article>
+          <article class="service-card scroll-reveal group">
+            <div class="service-card__bg" style="background-image:url(https://images.unsplash.com/photo-1519657337289-077653f724ed?w=600&q=80)"></div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="font-serif text-xl md:text-2xl text-ivory mb-2">Party & Editorial</h3>
+              <p class="text-champagne/80 text-sm leading-relaxed mb-4">Editorial and special occasion looks. Bold, creative, memorable.</p>
+              <p class="text-soft-gold font-serif text-lg">From $250</p>
+              <a href="#booking" class="service-card__cta">View Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 Q360,40 720,40 T1440,80 L1440,0 L0,0 Z" fill="#1a1816"/></svg>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <section class="section-luxury py-24 md:py-32 bg-warm-black relative" id="portfolio" data-lazy>
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">The Brides</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-ivory shimmer-wrap">Portfolio</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 mb-12 scroll-reveal">
+          <button type="button" class="portfolio-filter bg-soft-gold text-warm-black px-6 py-3 font-sans text-sm tracking-widest uppercase border border-soft-gold/50 transition-colors duration-300" data-filter="all">All</button>
+          <button type="button" class="portfolio-filter px-6 py-3 font-sans text-sm tracking-widest uppercase border border-soft-gold/50 text-ivory hover:bg-soft-gold/20 transition-colors duration-300" data-filter="traditional">Traditional</button>
+          <button type="button" class="portfolio-filter px-6 py-3 font-sans text-sm tracking-widest uppercase border border-soft-gold/50 text-ivory hover:bg-soft-gold/20 transition-colors duration-300" data-filter="modern">Modern</button>
+          <button type="button" class="portfolio-filter px-6 py-3 font-sans text-sm tracking-widest uppercase border border-soft-gold/50 text-ivory hover:bg-soft-gold/20 transition-colors duration-300" data-filter="reception">Reception</button>
+          <button type="button" class="portfolio-filter px-6 py-3 font-sans text-sm tracking-widest uppercase border border-soft-gold/50 text-ivory hover:bg-soft-gold/20 transition-colors duration-300" data-filter="destination">Destination</button>
+        </div>
+        <div class="portfolio-masonry" id="portfolioMasonry">
+          <article class="portfolio-item scroll-reveal card-tilt" data-category="traditional">
+            <div class="portfolio-item__img-wrap">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Bride - Traditional" loading="lazy" />
+              <div class="portfolio-item__glow"></div>
+              <span class="portfolio-item__name">Priya</span>
+            </div>
+          </article>
+          <article class="portfolio-item scroll-reveal card-tilt" data-category="modern">
+            <div class="portfolio-item__img-wrap">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80" alt="Bride - Modern" loading="lazy" />
+              <div class="portfolio-item__glow"></div>
+              <span class="portfolio-item__name">Ananya</span>
+            </div>
+          </article>
+          <article class="portfolio-item scroll-reveal card-tilt" data-category="reception">
+            <div class="portfolio-item__img-wrap">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Bride - Reception" loading="lazy" />
+              <div class="portfolio-item__glow"></div>
+              <span class="portfolio-item__name">Kavya</span>
+            </div>
+          </article>
+          <article class="portfolio-item scroll-reveal card-tilt" data-category="destination">
+            <div class="portfolio-item__img-wrap">
+              <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Bride - Destination" loading="lazy" />
+              <div class="portfolio-item__glow"></div>
+              <span class="portfolio-item__name">Diya</span>
+            </div>
+          </article>
+          <article class="portfolio-item scroll-reveal card-tilt" data-category="traditional">
+            <div class="portfolio-item__img-wrap">
+              <img src="https://images.unsplash.com/photo-1529634803642-3afd23a4e0a8?w=800&q=80" alt="Bride - Traditional" loading="lazy" />
+              <div class="portfolio-item__glow"></div>
+              <span class="portfolio-item__name">Aisha</span>
+            </div>
+          </article>
+          <article class="portfolio-item scroll-reveal card-tilt" data-category="modern">
+            <div class="portfolio-item__img-wrap">
+              <img src="https://images.unsplash.com/photo-1519657337289-077653f724ed?w=800&q=80" alt="Bride - Modern" loading="lazy" />
+              <div class="portfolio-item__glow"></div>
+              <span class="portfolio-item__name">Meera</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="View full size">
+      <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close">×</button>
+      <div class="lightbox__inner"><img src="" alt="" id="lightboxImg" /></div>
+    </div>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 Q360,40 720,40 T1440,80 L1440,0 L0,0 Z" fill="#1a1816"/></svg>
+    </div>
+
+    <!-- BEFORE & AFTER SLIDER -->
+    <section class="section-luxury py-24 md:py-32 relative" id="before-after" data-lazy>
+      <div class="absolute inset-0 bg-warm-black/98"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">Transformations</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-ivory shimmer-wrap">Before & After</h2>
+        </div>
+        <div class="max-w-4xl mx-auto space-y-12 md:space-y-16">
+          <div class="ba-slider scroll-reveal" data-ba-slider>
+            <div class="ba-slider__before"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=80" alt="Before" loading="lazy" /></div>
+            <div class="ba-slider__after"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=900&q=80" alt="After" loading="lazy" /></div>
+            <div class="ba-slider__handle" aria-hidden="true"><span></span></div>
+          </div>
+          <div class="ba-slider scroll-reveal" data-ba-slider>
+            <div class="ba-slider__before"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80" alt="Before" loading="lazy" /></div>
+            <div class="ba-slider__after"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80" alt="After" loading="lazy" /></div>
+            <div class="ba-slider__handle" aria-hidden="true"><span></span></div>
+          </div>
+          <div class="ba-slider scroll-reveal" data-ba-slider>
+            <div class="ba-slider__before"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&q=80" alt="Before" loading="lazy" /></div>
+            <div class="ba-slider__after"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=900&q=80" alt="After" loading="lazy" /></div>
+            <div class="ba-slider__handle" aria-hidden="true"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 Q360,40 720,40 T1440,80 L1440,0 L0,0 Z" fill="#1a1816"/></svg>
+    </div>
+
+    <!-- TESTIMONIALS CAROUSEL -->
+    <section class="py-24 md:py-32 bg-ivory text-warm-black relative" id="testimonials" data-lazy>
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">Real Brides</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-warm-black shimmer-wrap">Kind Words</h2>
+        </div>
+        <div class="testimonial-carousel max-w-4xl mx-auto relative">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-slide">
+              <div class="stars mb-4" aria-hidden="true">★★★★★</div>
+              <blockquote class="font-serif text-2xl md:text-3xl text-warm-black leading-relaxed mb-6">"Ramsha didn't just do my makeup—she gave me the confidence to walk down the aisle feeling like the best version of myself. Timeless, elegant, perfect."</blockquote>
+              <cite class="font-sans text-sm tracking-widest uppercase text-soft-gold">— Elena M.</cite>
+            </div>
+            <div class="testimonial-slide">
+              <div class="stars mb-4 text-soft-gold" aria-hidden="true">★★★★★</div>
+              <blockquote class="font-serif text-2xl md:text-3xl text-warm-black leading-relaxed mb-6">"From trial to wedding day, everything was seamless. My photos are stunning. I couldn't have asked for more."</blockquote>
+              <cite class="font-sans text-sm tracking-widest uppercase text-soft-gold">— Sofia K.</cite>
+            </div>
+            <div class="testimonial-slide">
+              <div class="stars mb-4 text-soft-gold" aria-hidden="true">★★★★★</div>
+              <blockquote class="font-serif text-2xl md:text-3xl text-warm-black leading-relaxed mb-6">"Worth every penny. My bridesmaids looked incredible too. Ramsha is pure magic."</blockquote>
+              <cite class="font-sans text-sm tracking-widest uppercase text-soft-gold">— Maya L.</cite>
+            </div>
+          </div>
+          <button type="button" class="testimonial-btn testimonial-btn--prev" aria-label="Previous"><span>‹</span></button>
+          <button type="button" class="testimonial-btn testimonial-btn--next" aria-label="Next"><span>›</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider silk-divider--dark w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 Q360,40 720,40 T1440,0 L1440,80 L0,80 Z" /></svg>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="py-24 md:py-32 bg-warm-black text-ivory relative" id="about" data-lazy>
+      <div class="absolute inset-0 radial-glow radial-glow--center opacity-20"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="scroll-reveal parallax-img">
+            <div class="aspect-[4/5] overflow-hidden rounded-sm card-tilt">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Ramsha - Bridal Makeup Artist" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div class="scroll-reveal">
+            <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">The Artist</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-ivory shimmer-wrap mb-6">About Ramsha</h2>
+            <p class="font-sans text-champagne/90 leading-relaxed mb-8">
+              An emerging luxury bridal artist with a passion for detail and a modern romantic eye. Every look is personally crafted—tailored to you, your skin, and your vision. No two brides are alike; your glam is designed with the same care and intention you bring to your day.
+            </p>
+            <div class="stats-grid grid grid-cols-3 gap-6 md:gap-8">
+              <div class="stat-item">
+                <span class="counter-value font-serif text-4xl md:text-5xl block" data-counter="50" data-suffix="+">0</span>
+                <span class="counter-suffix font-sans text-sm tracking-widest uppercase">Brides Styled</span>
+              </div>
+              <div class="stat-item">
+                <span class="counter-value font-serif text-4xl md:text-5xl block" data-counter="1" data-suffix="+">0</span>
+                <span class="counter-suffix font-sans text-sm tracking-widest uppercase">Year Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="counter-value font-serif text-4xl md:text-5xl block" data-counter="50" data-suffix="+">0</span>
+                <span class="counter-suffix font-sans text-sm tracking-widest uppercase">Destination Weddings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 Q360,40 720,40 T1440,80 L1440,0 L0,0 Z" fill="#1a1816"/></svg>
+    </div>
+
+    <!-- THE SIGNATURE EXPERIENCE -->
+    <section class="py-24 md:py-32 bg-ivory text-warm-black relative overflow-hidden" id="signature-experience" data-lazy>
+      <div class="absolute inset-0 radial-glow radial-glow--top opacity-15"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center scroll-reveal reveal-slow max-w-3xl mx-auto signature-experience">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">The Experience</p>
+          <h2 class="signature-experience__title font-serif text-4xl md:text-5xl lg:text-6xl text-warm-black mb-10">The Signature Experience</h2>
+          <p class="signature-experience__body font-sans text-charcoal/90 leading-loose text-lg md:text-xl">
+            From the first conversation, your vision takes center stage. A personalized consultation uncovers the look you imagine—soft and romantic, or bold and editorial. Your glam is tailored to your skin, your style, and the light of your day. On the morning of your wedding, the focus is on you: a calm, unhurried space where you are seen, heard, and beautifully made. This is more than makeup; it is the quiet confidence of knowing you look and feel like yourself, at your most radiant.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider silk-divider--dark w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 Q360,40 720,40 T1440,0 L1440,80 L0,80 Z" /></svg>
+    </div>
+
+    <!-- EXPERIENCE PROCESS (horizontal timeline) -->
+    <section class="py-24 md:py-32 bg-ivory text-warm-black relative" id="experience" data-lazy>
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-20 scroll-reveal">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">The Process</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-warm-black shimmer-wrap">Your Experience</h2>
+        </div>
+        <div class="experience-timeline flex flex-col md:flex-row md:flex-wrap md:justify-between gap-8 md:gap-4 relative scroll-reveal">
+          <div class="experience-step glass-card flex-1 min-w-[200px] p-8 text-center">
+            <span class="experience-step__num font-serif text-4xl text-soft-gold block mb-4">01</span>
+            <h3 class="font-serif text-xl text-warm-black mb-2">Consultation</h3>
+            <p class="text-charcoal/80 text-sm">I listen to your vision, your skin, and the mood of your day.</p>
+          </div>
+          <div class="experience-step glass-card flex-1 min-w-[200px] p-8 text-center">
+            <span class="experience-step__num font-serif text-4xl text-soft-gold block mb-4">02</span>
+            <h3 class="font-serif text-xl text-warm-black mb-2">Trial Session</h3>
+            <p class="text-charcoal/80 text-sm">A full trial in a relaxed setting. We refine until it's unmistakably you.</p>
+          </div>
+          <div class="experience-step glass-card flex-1 min-w-[200px] p-8 text-center">
+            <span class="experience-step__num font-serif text-4xl text-soft-gold block mb-4">03</span>
+            <h3 class="font-serif text-xl text-warm-black mb-2">Final Look Planning</h3>
+            <p class="text-charcoal/80 text-sm">Lock in your look and timeline for the big day.</p>
+          </div>
+          <div class="experience-step glass-card flex-1 min-w-[200px] p-8 text-center">
+            <span class="experience-step__num font-serif text-4xl text-soft-gold block mb-4">04</span>
+            <h3 class="font-serif text-xl text-warm-black mb-2">Wedding Day Glam</h3>
+            <p class="text-charcoal/80 text-sm">I arrive with calm and precision. You shine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider silk-divider--dark w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 Q360,40 720,40 T1440,0 L1440,80 L0,80 Z" /></svg>
+    </div>
+
+    <!-- INSTAGRAM PREVIEW -->
+    <section class="section-luxury py-24 md:py-32 relative" id="instagram" data-lazy>
+      <div class="absolute inset-0 bg-warm-black/98"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <p class="text-soft-gold font-sans text-xs tracking-[0.4em] uppercase mb-4">Follow Along</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-ivory shimmer-wrap">@RamshaBride</h2>
+        </div>
+        <div class="instagram-grid grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 max-w-5xl mx-auto scroll-reveal">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-tile group aspect-square overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="" loading="lazy" /></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-tile group aspect-square overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" alt="" loading="lazy" /></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-tile group aspect-square overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&q=80" alt="" loading="lazy" /></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-tile group aspect-square overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&q=80" alt="" loading="lazy" /></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-tile group aspect-square overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1519657337289-077653f724ed?w=400&q=80" alt="" loading="lazy" /></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-tile group aspect-square overflow-hidden rounded-sm"><img src="https://images.unsplash.com/photo-1529634803642-3afd23a4e0a8?w=400&q=80" alt="" loading="lazy" /></a>
+        </div>
+        <div class="text-center mt-10 scroll-reveal">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-magnetic-wrap inline-block">
+            <span class="btn-magnetic btn-outline">Follow on Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative" aria-hidden="true">
+      <svg class="silk-divider w-full" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,80 Q360,40 720,40 T1440,80 L1440,0 L0,0 Z" fill="#1a1816"/></svg>
+    </div>
+
+    <!-- BOOKING CTA (full-width cinematic + form + WhatsApp) -->
+    <section class="booking-cta relative min-h-[90vh] flex items-center justify-center py-24 md:py-32" id="booking" data-lazy>
+      <div class="booking-cta__video">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=60">
+          <source src="videos/local-video-1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="booking-cta__overlay"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-2xl mx-auto text-center mb-16 scroll-reveal">
+          <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight mb-6">Your Dream Look<br />Starts Here.</h2>
+          <p class="text-champagne/95 font-sans text-lg">Tell us about your day. We'll make it unforgettable.</p>
+        </div>
+        <div class="max-w-xl mx-auto scroll-reveal">
+          <div class="glass-card p-8 md:p-12 border border-soft-gold/30 bg-warm-black/60 backdrop-blur-xl">
+            <form id="contactForm" class="space-y-5">
+              <input type="text" id="name" name="name" placeholder="Your Name" required class="contact-input w-full px-4 py-3 bg-ivory/10 border border-soft-gold/30 rounded-sm font-sans text-ivory placeholder-champagne/60" />
+              <input type="date" id="weddingDate" name="weddingDate" class="contact-input w-full px-4 py-3 bg-ivory/10 border border-soft-gold/30 rounded-sm font-sans text-ivory" />
+              <input type="text" id="location" name="location" placeholder="Wedding Location" class="contact-input w-full px-4 py-3 bg-ivory/10 border border-soft-gold/30 rounded-sm font-sans text-ivory placeholder-champagne/60" />
+              <select id="serviceType" name="serviceType" class="contact-select w-full px-4 py-3 bg-ivory/10 border border-soft-gold/30 rounded-sm font-sans text-ivory">
+                <option value="">Service Type</option>
+                <option value="full-bridal">Full Bridal</option>
+                <option value="trial-only">Trial Only</option>
+                <option value="bridal-party">Bridal Party</option>
+                <option value="destination">Destination</option>
+              </select>
+              <textarea id="message" name="message" rows="3" placeholder="Tell me about your day..." class="contact-textarea w-full px-4 py-3 bg-ivory/10 border border-soft-gold/30 rounded-sm font-sans text-ivory placeholder-champagne/60 resize-none"></textarea>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <button type="submit" class="btn-magnetic flex-1">Send Message</button>
+                <a href="https://wa.me/1234567890?text=Hi%2C%20I%27d%20like%20to%20book%20a%20bridal%20consultation" target="_blank" rel="noopener" class="btn-whatsapp flex-1 inline-flex items-center justify-center gap-2 font-sans text-sm tracking-widest uppercase py-4 px-6 rounded-sm border border-emerald-400/60 text-emerald-300 hover:bg-emerald-500/20 transition-colors duration-300">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Quick Book on WhatsApp
+                </a>
+              </div>
+            </form>
+            <div id="formSuccess" class="hidden mt-6 p-4 rounded-sm bg-soft-gold/20 border border-soft-gold/40 text-ivory text-center font-sans text-sm">Thank you. Your message has been sent. We'll be in touch soon.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-16 bg-warm-black border-t border-soft-gold/20">
+    <div class="container mx-auto px-6 text-center">
+      <p class="font-serif text-3xl text-soft-gold tracking-[0.2em]">RAMSHA</p>
+      <p class="font-sans text-xs tracking-widest text-champagne/70 mt-2">Where Bridal Beauty Becomes Timeless Art</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
