@@ -10,7 +10,7 @@ ES modules require a local server:
 node server.js
 ```
 
-Then open **http://localhost:3333**.
+Then open **http://localhost:3334**.
 
 ## Brand
 

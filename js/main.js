@@ -17,35 +17,58 @@ import { initBeforeAfter } from './before-after.js';
 import { initTestimonials } from './testimonials.js';
 
 function init() {
-  // Initialize performance-heavy modules first
-  requestAnimationFrame(() => {
-    initCursor();
-  });
+  // Check if mobile device
+  const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
-  requestAnimationFrame(() => {
-    initThreeBg();
-    initParticles();
-  });
+  if (isMobile) {
+    // Unload background video streams dynamically on mobile to free memory and GPU resources
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => {
+      try {
+        video.pause();
+        const sources = video.querySelectorAll('source');
+        sources.forEach((source) => source.remove());
+        video.removeAttribute('src');
+        video.load();
+      } catch (e) {
+        console.warn("Could not unload mobile video resource:", e);
+      }
+    });
+  } else {
+    // Initialize performance-heavy desktop modules first
+    requestAnimationFrame(() => {
+      initCursor();
+    });
+    
+    requestAnimationFrame(() => {
+      initThreeBg();
+      initParticles();
+    });
+  }
   
   // Preloader and main content
   initPreloader().then(() => {
     document.body.classList.add('loaded');
-    initLenis();
+    initLenis(isMobile);
     
     // Stagger initialization of remaining modules
     requestAnimationFrame(() => {
-      initHero();
-      initScrollReveal();
+      initHero(isMobile);
+      if (!isMobile) {
+        initScrollReveal();
+      }
     });
     
     setTimeout(() => {
       initPortfolio();
       initAbout();
       initContact();
-      initMagneticButtons();
+      if (!isMobile) {
+        initMagneticButtons();
+      }
       initBeforeAfter();
       initTestimonials();
-    }, 100);
+    }, isMobile ? 50 : 100); // Faster on mobile
   });
 }
 

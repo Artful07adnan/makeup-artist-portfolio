@@ -1,7 +1,7 @@
 /**
  * Hero: calm, smooth fade-in sequence (Monogram → Brand → Line → Tagline → Subheading → Buttons)
  */
-export function initHero() {
+export function initHero(isMobile) {
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   if (!gsap || !ScrollTrigger) return;
@@ -30,14 +30,16 @@ export function initHero() {
     }, i === 0 ? 0 : 0.3);
   });
 
-  gsap.to(hero.querySelector('.hero-video-wrap'), {
-    scale: 1.15,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: hero,
-      start: 'top top',
-      end: 'bottom top',
-      scrub: 1,
-    },
-  });
+  if (!isMobile) {
+    gsap.to(hero.querySelector('.hero-video-wrap'), {
+      scale: 1.15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
+  }
 }

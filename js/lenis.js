@@ -1,8 +1,8 @@
 /**
  * Lenis smooth scrolling + GSAP ScrollTrigger integration
  */
-export function initLenis() {
-  if (typeof Lenis === 'undefined') return;
+export function initLenis(isMobile) {
+  if (typeof Lenis === 'undefined' || isMobile) return;
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   document.documentElement.classList.add('lenis', 'lenis-smooth');
