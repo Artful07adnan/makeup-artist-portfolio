@@ -860,95 +860,15 @@ html.lenis, html.lenis body { height: auto; }
 
 /* ---------- Mobile: luxury feel preserved + performance optimizations ---------- */
 @media (max-width: 768px) {
-  /* Disable performance-heavy elements */
-  .three-bg, .particles-layer, .cursor-dot, .cursor-ring {
+  /* Disable custom cursor on touch screens */
+  .cursor-dot, .cursor-ring {
     display: none !important;
   }
   
   /* Optimize video performance */
   .hero-video, .booking-cta__video {
-    transform: scale(1.05);
     will-change: transform;
     backface-visibility: hidden;
-  }
-  
-  /* Simplify animations for mobile */
-  .brand-logo {
-    animation: none !important;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4) !important;
-    transform: translateZ(0) !important;
-    will-change: transform;
-  }
-  
-  .brand-logo::before {
-    display: none !important;
-  }
-  
-  .brand-monogram {
-    animation: none !important;
-    transform: scale(0.9);
-    will-change: transform;
-  }
-  
-  .brand-line {
-    animation: none !important;
-    width: 60px;
-    opacity: 1;
-  }
-  
-  .brand-tagline {
-    animation: none !important;
-    opacity: 1;
-    transform: translateZ(0);
-    will-change: transform;
-  }
-  
-  .hero-subheading {
-    animation: none !important;
-    opacity: 1;
-    transform: translateZ(0);
-    will-change: transform;
-  }
-  
-  .hero-ctas {
-    animation: none !important;
-    opacity: 1;
-    transform: translateZ(0);
-    will-change: transform;
-  }
-  
-  .hero-vertical-line {
-    animation: none !important;
-    opacity: 0.8;
-    transform: translateZ(0);
-    will-change: transform;
-  }
-  
-  /* Disable scroll reveal */
-  .scroll-reveal {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
-  /* Optimize portfolio */
-  .portfolio-item {
-    transition: none !important;
-    transform: none !important;
-  }
-  
-  .portfolio-item:hover img {
-    transform: none !important;
-  }
-  
-  /* Disable magnetic buttons */
-  .btn-magnetic {
-    transform: none !important;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  }
-  
-  /* Disable heavy effects */
-  .hero-gold-particles {
-    display: none !important;
   }
   
   /* Optimize font rendering */

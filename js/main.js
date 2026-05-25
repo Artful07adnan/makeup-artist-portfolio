@@ -20,55 +20,35 @@ function init() {
   // Check if mobile device
   const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
-  if (isMobile) {
-    // Unload background video streams dynamically on mobile to free memory and GPU resources
-    const videos = document.querySelectorAll('video');
-    videos.forEach((video) => {
-      try {
-        video.pause();
-        const sources = video.querySelectorAll('source');
-        sources.forEach((source) => source.remove());
-        video.removeAttribute('src');
-        video.load();
-      } catch (e) {
-        console.warn("Could not unload mobile video resource:", e);
-      }
-    });
-  } else {
-    // Initialize performance-heavy desktop modules first
-    requestAnimationFrame(() => {
-      initCursor();
-    });
-    
-    requestAnimationFrame(() => {
-      initThreeBg();
-      initParticles();
-    });
-  }
+  // Initialize modules across all viewports
+  requestAnimationFrame(() => {
+    initCursor();
+  });
+  
+  requestAnimationFrame(() => {
+    initThreeBg();
+    initParticles();
+  });
   
   // Preloader and main content
   initPreloader().then(() => {
     document.body.classList.add('loaded');
-    initLenis(isMobile);
+    initLenis(isMobile); // Keep Lenis smart scroll toggle for touch devices
     
     // Stagger initialization of remaining modules
     requestAnimationFrame(() => {
-      initHero(isMobile);
-      if (!isMobile) {
-        initScrollReveal();
-      }
+      initHero(false); // Enable desktop-like video zoom effect on scroll
+      initScrollReveal(); // Enable scroll reveal animations
     });
     
     setTimeout(() => {
       initPortfolio();
       initAbout();
       initContact();
-      if (!isMobile) {
-        initMagneticButtons();
-      }
+      initMagneticButtons();
       initBeforeAfter();
       initTestimonials();
-    }, isMobile ? 50 : 100); // Faster on mobile
+    }, 100);
   });
 }
 
