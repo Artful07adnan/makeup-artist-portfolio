@@ -50,7 +50,7 @@ export function initContact() {
       `*Notes:* ${message || 'None'}`;
 
     const encodedText = encodeURIComponent(textMessage);
-    const phoneNumber = "917974459408"; // Ramsha's official contact number
+    const phoneNumber = "916260827367"; // Ramsha's official contact number
 
     // 4. Premium GSAP feedback (particle burst at the button click center)
     const rect = whatsappBtn.getBoundingClientRect();
