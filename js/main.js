@@ -15,6 +15,7 @@ import { initParticles } from './particles.js';
 import { initMagneticButtons } from './magnetic.js';
 import { initBeforeAfter } from './before-after.js';
 import { initTestimonials } from './testimonials.js';
+import { initServices } from './services.js';
 
 function init() {
   // Check if mobile device
@@ -48,6 +49,7 @@ function init() {
       initMagneticButtons();
       initBeforeAfter();
       initTestimonials();
+      initServices();
     }, 100);
   });
 }
