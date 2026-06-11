@@ -5,77 +5,74 @@
 const servicesData = {
   bridal: {
     title: 'Bridal Makeup',
-    price: 'From ₹14,000',
+    price: 'From ₹12,000',
     duration: '3 Hours',
-    selectValue: 'Full Bridal',
+    selectValue: 'Full Bridal Services',
     description: 'Couture bridal glam customized for your big day. Designed to look breathtaking in person and flawless on camera, ensuring you feel radiant and confident.',
+    sectionTitle: 'BRIDAL MAKEUP PACKAGES',
     inclusions: [
-      'Skin Hydration & Hydrating Prep',
-      'Premium HD / Airbrush Base',
-      'Luxury Lash Customization',
-      'Hairstyling & Draping Assistance',
-      'Setting sprays for 12hr+ longevity',
-      'Premium Touch-up Kit'
+      'Ultra HD Makeup  (₹12,000)',
+      'Ultra HD Makeup + Luxury Brands  (₹14,000)',
+      'Airbrush Makeup  (₹16,000)',
+      'Signature Couture Airbrush Makeup  (₹20,000)'
     ]
   },
   engagement: {
     title: 'Engagement Makeup',
-    price: 'From ₹12,000',
-    duration: '2.5 Hours',
-    selectValue: 'Trial Only',
-    description: 'A romantic, glowing look tailored for your engagement ceremony or photoshoot. Enhances your natural features with a soft, camera-ready radiant finish.',
+    price: 'From ₹6,000',
+    duration: '2 Hours',
+    selectValue: 'Engagement Makeup Services',
+    sectionTitle: 'ENGAGEMENT MAKEUP PACKAGES',
+
+    description: 'Elegant and camera-ready engagement makeup designed to enhance your natural beauty while ensuring a flawless, long-lasting finish for your special celebration.',
+
     inclusions: [
-      'Luminosity Skin Prep',
-      'Flawless HD Makeup Base',
-      'Premium Custom Lashes',
-      'Romantic Hairstyling',
-      'Dressing & Draping Assistance',
-      'Mini Touch-up Kit'
+      'HD Makeup (₹6,000)',
+      'Ultra HD Makeup (₹7,000)',
+      'Airbrush Makeup (₹8,000)'
     ]
   },
   reception: {
-    title: 'Reception Glam',
+    title: 'Reception Makeup',
     price: 'From ₹12,000',
-    duration: '2.5 Hours',
-    selectValue: 'Full Bridal',
-    description: 'An elegant, high-impact look for your reception celebration. Characterized by sophisticated details, dramatic accents, and longevity for evening lighting.',
+    duration: '3 Hours',
+    selectValue: 'Reception Makeup Services',
+    sectionTitle: 'RECEPTION MAKEUP PACKAGES',
+
+    description: 'Sophisticated reception makeup crafted for a glamorous evening look, ensuring flawless photographs and long-lasting elegance throughout your celebration.',
+
     inclusions: [
-      'Deep Skin Prep & Prime',
-      'Sophisticated HD Matte/Glow Finish',
-      'Drama Eye Makeup / Bold Lip Option',
-      'Modern Elegant Hairstyling',
-      'Saree / Dupatta Draping Assistance',
-      'Touch-up Kit'
+      'Ultra HD Makeup (₹12,000)',
+      'Ultra HD Makeup + Luxury Brands (₹14,000)',
+      'Airbrush Makeup (₹16,000)',
+      'Signature Couture Airbrush Makeup (₹20,000)'
     ]
   },
   'hd-airbrush': {
-    title: 'HD / Airbrush',
-    price: 'From ₹16,000',
-    duration: '3 Hours',
-    selectValue: 'Full Bridal',
-    description: 'High-definition airbrush application for a seamless, weightless, transfer-resistant base. Ideal for professional photography, films, and warm weather.',
+    title: 'Carnival Glam',
+    price: 'From ₹6,000',
+    duration: '2 Hours',
+    sectionTitle: 'CARNIVAL GLAM PACKAGES',
+
+    description: 'Creative and vibrant glam designed for festive celebrations, cultural events, and memorable occasions. Crafted to enhance your natural beauty while ensuring a flawless, long-lasting finish.', sectionTitle: 'CARNIVAL MAKEUP PACKAGES',
+
     inclusions: [
-      'Silicon-based or Water-based Airbrush Base',
-      'Pore-refining Skin Prep',
-      'Luxury Mink Lashes',
-      'Hairstyling & Set Styling',
-      'Outfit Draping Assistance',
-      'Complete Premium Touch-up Kit'
+      'HD Makeup (₹6,000)',
+      'Ultra HD Makeup (₹7,000)',
+      'Airbrush Makeup (₹8,000)'
     ]
   },
   'party-editorial': {
-    title: 'Party & Editorial',
-    price: 'From ₹10,000',
+    title: 'Cocktail Glam',
+    price: 'From ₹6,000',
     duration: '2 Hours',
-    selectValue: 'Bridal Party',
-    description: 'Bold, creative, and fashion-forward looks designed for editorials, high-profile cocktail parties, or runway shoots. Tailored entirely to your theme.',
+    sectionTitle: 'COCKTAIL GLAM PACKAGES',
+
+    description: 'Elegant cocktail glam tailored for parties, receptions, and social gatherings. Designed to deliver a polished, long-lasting look that photographs beautifully from every angle.',
     inclusions: [
-      'Themed or Avant-Garde Makeup Base',
-      'Creative Eye Art / Specialty Liners',
-      'High-impact Glow & Sculpting',
-      'Basic Hair Set or Slick Look styling',
-      'Premium Setting & Lock sprays',
-      'Lash Application'
+      'HD Makeup (₹6,000)',
+      'Ultra HD Makeup (₹7,000)',
+      'Airbrush Makeup (₹8,000)'
     ]
   }
 };
@@ -112,7 +109,7 @@ export function initServices() {
         </div>
       </div>
       <p class="service-modal__body">${data.description}</p>
-      <h4 class="service-modal__subtitle">What's Included</h4>
+      <h4 class="service-modal__subtitle">${data.sectionTitle}</h4>
       <ul class="service-modal__inclusions">
         ${inclusionsHTML}
       </ul>
@@ -126,7 +123,7 @@ export function initServices() {
     // Open modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    
+
     // Stop Lenis if it exists
     if (window.lenis) {
       window.lenis.stop();
@@ -142,7 +139,7 @@ export function initServices() {
     if (bookBtn) {
       bookBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         // Update select value in booking form
         const serviceSelect = document.getElementById('serviceType');
         if (serviceSelect) {
@@ -186,7 +183,7 @@ export function initServices() {
       if (e.target.classList.contains('service-card__cta') || e.target.closest('.service-card__cta')) {
         e.preventDefault();
       }
-      
+
       const serviceId = card.getAttribute('data-service');
       if (serviceId) {
         openModal(serviceId);
